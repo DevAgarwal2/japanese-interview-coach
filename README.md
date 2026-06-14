@@ -30,17 +30,26 @@ cd japanese-interview-coach
 
 The app expects four GGUF files plus the prebuilt `llama-liquid-audio-cli` runner. The default path is `../model/lfm2.5-audio-jp-q8/` (one directory up from the project). You can override this with the `LFM_MODEL_DIR` environment variable.
 
-Install the Hugging Face CLI with [`uv`](https://docs.astral.sh/uv/) (recommended) or `pip`:
+Install the [`hf` CLI](https://huggingface.co/docs/huggingface_hub/en/guides/cli) (the new name for `huggingface-cli`):
 
 ```bash
-# uv (preferred)
+# uv (recommended) — installs the `hf` command globally
 uv tool install huggingface_hub
 
-# or pip
-pip install huggingface-hub
+# pip
+pip install -U "huggingface_hub"
+
+# or run without installing at all
+uvx hf auth login
 ```
 
-Then download the model:
+Then authenticate (you need a [User Access Token](https://huggingface.co/settings/tokens)):
+
+```bash
+hf auth login
+```
+
+Now download the model:
 
 ```bash
 hf download LiquidAI/LFM2.5-Audio-1.5B-JP-GGUF \
@@ -48,7 +57,7 @@ hf download LiquidAI/LFM2.5-Audio-1.5B-JP-GGUF \
   --local-dir-use-symlinks False
 ```
 
-> The new CLI is `hf` (the old `huggingface-cli` is deprecated). If you have the old one installed, `hf` is the same Python module re-exposed under the new entry point — both still work, but `hf` is the supported name going forward.
+> The PyPI package is `huggingface_hub`; the CLI command is `hf` (replaces the deprecated `huggingface-cli`).
 
 After download you should have:
 
@@ -208,4 +217,3 @@ The `-JP-` model variant is Japanese-only. Speak Japanese, or switch to the mult
 - Model: [Liquid AI LFM2.5-Audio-1.5B-JP](https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B-JP-GGUF) — see the model card for license terms.
 - Inference: [`llama.cpp` with the WIP `LFM2.5-Audio` PR #18641](https://github.com/ggml-org/llama.cpp/pull/18641). The CLI runner is prebuilt and shipped with the model on Hugging Face.
 - This app: MIT (or whatever you prefer).
-# japanese-interview-coach
