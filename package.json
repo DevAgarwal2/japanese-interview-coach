@@ -1,0 +1,30 @@
+{
+  "name": "interview-coach",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/node": "^10.1.4",
+    "@astrojs/react": "^5.0.4",
+    "@base-ui/react": "^1.5.0",
+    "@radix-ui/react-dialog": "^1.1.0",
+    "@radix-ui/react-slider": "^1.2.0",
+    "@radix-ui/react-tooltip": "^1.1.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.2.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "openai": "^4.73.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^2.6.0"
+  },
+  "overrides": {
+    "vite": "^7.0.0"
+  }
+}

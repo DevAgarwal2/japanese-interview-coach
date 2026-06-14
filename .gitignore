@@ -1,0 +1,46 @@
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Build output
+dist/
+.astro/
+.output/
+
+# Dependencies
+node_modules/
+.npm/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.fuse_hidden*
+.Trash-*
+.directory
+
+# Environment files (may contain secrets, model paths, tokens)
+.env
+.env.local
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Bun
+bun.lockb
+
+# Misc
+*.tmp
+*.bak
+*.orig
