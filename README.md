@@ -30,14 +30,14 @@ cd japanese-interview-coach
 
 The app expects four GGUF files plus the prebuilt `llama-liquid-audio-cli` runner. The default path is `../model/lfm2.5-audio-jp-q8/` (one directory up from the project). You can override this with the `LFM_MODEL_DIR` environment variable.
 
-Install the [`hf` CLI](https://huggingface.co/docs/huggingface_hub/en/guides/cli) (the new name for `huggingface-cli`):
+Install the [`hf` CLI`](https://pypi.org/project/hf/) (standalone CLI extracted from `huggingface_hub`):
 
 ```bash
-# uv (recommended) — installs the `hf` command globally
-uv tool install huggingface_hub
+# uv (recommended) — lightweight, just the CLI
+uv tool install hf
 
 # pip
-pip install -U "huggingface_hub"
+pip install -U hf
 
 # or run without installing at all
 uvx hf auth login
@@ -57,7 +57,7 @@ hf download LiquidAI/LFM2.5-Audio-1.5B-JP-GGUF \
   --local-dir-use-symlinks False
 ```
 
-> The PyPI package is `huggingface_hub`; the CLI command is `hf` (replaces the deprecated `huggingface-cli`).
+> The PyPI package `hf` is a standalone CLI (extracted from `huggingface_hub`). Use `uv tool install hf` for just the CLI, or `uv tool install huggingface_hub` if you also need the Python library in scripts.
 
 After download you should have:
 
